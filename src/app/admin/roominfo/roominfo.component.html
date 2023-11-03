@@ -1,0 +1,941 @@
+<style>
+.disflex {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-content {
+  width: 100%;
+  margin: auto;
+}
+.flash {
+        font-size: 0.8em;
+        position: relative;
+        bottom: 0.6em;
+}
+</style>
+<div class="bannar-nav">
+    <div class="row">
+        <div class="column disflex">
+          <div class="">
+            <!-- <a>
+              <input [(ngModel)]="name" type="text" placeholder="Nhập thông tin...">
+              <button (click)="timkiem()"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm </button>
+            </a> -->
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="ml-auto">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#FlootAdd"
+              class="btn btn-sm btn-success waves-effect waves-light mr-1" title="Thêm Tòa Nhà" (click)="Add()">
+              <i class="fa-solid fa-plus"></i> Thêm Tầng
+              </button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#addhouse"
+              class="btn btn-sm btn-success waves-effect waves-light mr-1" title="Thêm Tòa Nhà" (click)="themtoa()">
+              <i class="fa-solid fa-landmark"></i> Thêm Tòa
+              </button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#edithouse"
+              class="btn btn-sm btn-success waves-effect waves-light mr-1" title="Sửa Tòa Nhà" (click)="suatoa()">
+              <i class="mdi mdi-home-edit-outline"></i> Sửa Tòa
+              </button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+              class="btn btn-sm btn-success waves-effect waves-light" title="Xóa Tòa Nhà" (click)="Add()">
+              <i class="mdi mdi-home-remove-outline"></i> Xóa Tòa
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="">
+  <div class="card">
+    <div class="card-body">
+      <div class="text-start custom-accordion col-md-12">
+        <div class="card-body disflex" href="#taskcollapse1" data-bs-toggle="collapse">
+          <a class="text-dark d-block mb-0">Khu tro A</a>
+          <div class="">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+            class="btn btn-sm btn-primary waves-effect waves-light mr-1" title="Xóa Tầng" (click)="Add()">
+            <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+            class="btn btn-sm btn-success waves-effect waves-light" title="Xóa Tầng" (click)="Add()">
+            <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <div class="collapse show" id="taskcollapse1">
+          <div class="mt-0">
+            <div class="">
+            <div class="">
+              <div class="card-body card">
+                <div class="disflex" data-bs-toggle="collapse" href="#tangtoanha1">
+                  <h5 class="" style="margin: 6px;"> Tầng 1 </h5>
+                  <div>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                    class="btn btn-sm btn-success waves-effect waves-light" title="Xóa Tầng" (click)="Add()">
+                    <i class="fa-solid fa-x"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="row collapse show" id="tangtoanha1">
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Đang Ở
+                          </div>
+                          <!-- <div class="" style="color: #333; height: 2rem">
+                          </div> -->
+                          <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 1 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 1 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body card">
+                <div class="disflex" data-bs-toggle="collapse" href="#tangtoanha2">
+                  <h5 class="mb-2" style="margin: 6px;"> Tầng 2 </h5>
+                  <div>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                    class="btn btn-sm btn-success waves-effect waves-light" title="Xóa Tầng" (click)="Add()">
+                    <i class="fa-solid fa-x"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="row collapse show" id="tangtoanha2">
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Đang Ở
+                          </div>
+                          <!-- <div class="" style="color: #333; height: 2rem">
+                          </div> -->
+                          <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 1 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 1 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                      <div class="text-center" style="font-weight: 400; margin: 10px 6px;">
+                        <div style="text-align: left;">
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-house"></i><span> 101 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            Trống
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                             Thêm Khách
+                            </button>
+                          </div>
+                          <!-- <div class="disflex" style="color: #333; height: 2rem; margin-bottom: 6px;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-info waves-effect waves-light mr-1" title="Trả Phòng" (click)="Add()">
+                            Trả
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-dark waves-effect waves-light mr-1" title="Xem Thông Tin Khách" (click)="Add()">
+                            Xem
+                            </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#phong"
+                            class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa Thông Tin Khách" (click)="Add()">
+                            Sửa
+                            </button>
+                          </div> -->
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-solid fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-regular fa-user"></i><span> 0 </span></a>
+                          </div>
+                          <div class="" style="color: #333; height: 2rem">
+                            <a><i class="fa-brands fa-stack-overflow"></i><span> 30m<span class="flash">2</span> </span></a>
+                          </div>
+                          <div class="" style="color: #ff4343; height: 2rem">
+                            <a><i class="fa-solid fa-money-bill"></i><span> 3tr4 </span></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="ml-auto">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                            class="btn btn-sm btn-primary waves-effect waves-light mr-3" title="Sửa Thông Tin Phòng" (click)="Add()">
+                            <i class="fa-regular fa-pen-to-square mr-2"></i> Sửa Nhà
+                            </button>
+
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete"
+                            class="btn btn-sm btn-danger waves-effect waves-light" title="Xóa Phòng" (click)="Add()">
+                            <i class="fa-regular fa-trash-can mr-2"></i> Xóa
+                            </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- end col -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end col -->
+
+<!-- tòa nhà -->
+<div class="modal fade" id="addhouse" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Thêm Tòa Nhà</h4>
+      </div>
+      <!-- [formGroup]="formInfo" (ngSubmit)="saveInfo()" -->
+      <form>
+        <div class="modal-body">
+          <div class="row">
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Tên Tòa <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập tên tòa..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Địa Chỉ <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập địa chỉ..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Người Quản Lý tòa <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập tên..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-info waves-effect waves-light" data-bs-dismiss="modal">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="edithouse" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Sửa Thông Tin Tòa Nhà</h4>
+      </div>
+      <!-- [formGroup]="formInfo" (ngSubmit)="saveInfo()" -->
+      <form>
+        <div class="modal-body">
+          <div class="row">
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Tên Tòa <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập tên tòa..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Địa Chỉ <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập địa chỉ..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Người Quản Lý tòa <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Nhập tên..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-info waves-effect waves-light" data-bs-dismiss="modal">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- phòng -->
+<div class="modal fade" id="phong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Thông Tin Khách Trọ</h4>
+      </div>
+      <!-- [formGroup]="formInfo" (ngSubmit)="saveInfo()" -->
+      <form>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6 col-md-6">
+              <label class="col-form-label">Ảnh</label>
+              <div class="image-upload">
+                <label for="upload">
+                  <span class="ri-folder-open-fill position-absolute top-0 start-100 translate-middle"></span>
+                  <input type="file" id="upload" (change)="onFileSelected($event)">
+                </label>
+                <img alt="Preview" class="image-preview">
+              </div>
+            </div>
+            <div class="col-6 col-md-6">
+              <label class="col-form-label">Ảnh</label>
+              <div class="image-upload">
+                <label for="upload2">
+                  <span class="ri-folder-open-fill position-absolute top-0 start-100 translate-middle"></span>
+                  <input type="file" id="upload2" (change)="onFileSelected($event)">
+                </label>
+                <img alt="Preview" class="image-preview">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Họ tên <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Họ tên <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  SDT <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  SDT <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Địa Chỉ Thường Chú <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Địa Chỉ Thường Chú <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-info waves-effect waves-light" data-bs-dismiss="modal">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div><!-- /.modal -->
+
+<!-- sửa nhà -->
+<div class="modal fade" id="addroom" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="margin-top: 10px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          Sửa Thông Tin Phòng
+        </h4>
+      </div>
+      <!-- [formGroup]="formInfo" (ngSubmit)="saveInfo()" -->
+      <form>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Số Phòng <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Hiện Trạng Phòng <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Họ & Tên Khách 1 <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Họ & Tên Khách 2 <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                  Diện Tích Phòng <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label">
+                 Giá Tiền <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-2 row">
+                <label class="col-md-12 col-form-label" for="example-textarea">Ghi chú</label>
+                <div class="col-md-12">
+                    <textarea class="form-control" id="example-textarea" rows="5" placeholder="Thêm ghi chú..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-info waves-effect waves-light" data-bs-dismiss="modal">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div><!-- /.modal -->
+
+<div class="modal fade" id="FlootAdd" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center mt-2 mb-4">
+          <div class="auth-logo">
+            <a class="logo logo-dark">
+              <span class="logo-lg">
+                <img src="assets/default/images/logo-dark.png" alt="" height="22" />
+              </span>
+            </a>
+            <a class="logo logo-light">
+              <span class="logo-lg">
+                <img src="assets/default/images/logo-light.png" alt="" height="22" />
+              </span>
+            </a>
+          </div>
+        </div>
+        <form class="px-3">
+          <div class="mb-3 row">
+            <label for="hori-pass1" class="col-2 col-form-label">Tên</label>
+            <div class="col-10">
+              <input formControlName="name" type="text" value="" class="form-control" />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="hori-pass1" class="col-2 col-form-label">Thu tu</label>
+            <div class="col-10">
+              <input formControlName="order" type="text" value="" class="form-control" />
+            </div>
+          </div>
+          <div class="" style="text-align: center">
+            <button type="submit" class="btn btn-primary waves-effect waves-light me-1"
+              style="padding-left: 40px; padding-right: 40px" data-bs-dismiss="modal" aria-label="Close">
+              <i class="fe-save"></i>
+              XÁC NHẬN
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<!-- xóa -->
+<div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa dữ liệu?</div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

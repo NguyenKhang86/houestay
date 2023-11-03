@@ -1,0 +1,18 @@
+.disflex {
+    display: flex;
+    justify-content: space-between  ;
+}
+.card-body {
+    padding: 5px;
+    margin: 0 10px;
+    border-bottom: 1px solid ; 
+}
+.t-end {
+    text-align: end;
+}
+td, th {
+    border: 2px solid #edeff1;
+}
+input {
+    width: 100%;
+}

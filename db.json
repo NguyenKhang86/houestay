@@ -1,0 +1,120 @@
+{
+  "house": [
+    {
+      "id": 1,
+      "address": "Hà Đông",
+      "manager": "nguyễn văn A",
+      "floor": [
+        {
+          "id": 1,
+          "namefloor": "tầng 1",
+          "room": [
+            {
+              "id": 1,
+              "nameroom": "101",
+              "name1": "nguyễn văn A",
+              "name2": "nguyễn văn B",
+              "phone1": 123,
+              "phone2": 456,
+              "acreage": "30m",
+              "price": "3tr4",
+              "status": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "personalinformation": [
+    {
+      "id": 1,
+      "name": "nguyễn văn A",
+      "phone": 123,
+      "regularadderss": "thanh xuân- hà nội",
+      "Mail": "myname#gmail.com",
+      "birthday": 456,
+      "cccd": "0123456",
+      "adderss": "dia chi"
+    }
+  ],
+  "toanha": [
+    {
+      "id": 1,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 2,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 3,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 4,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 5,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 6,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 7,
+      "toanha": "Vệ An BN"
+    },
+    {
+      "id": 8,
+      "toanha": "Vệ An BN"
+    }
+  ],
+  "phong": [
+    {"id": 1, "sophong": "101"},
+    {"id": 2, "sophong": "102"},
+    {"id": 3, "sophong": "103"},
+    {"id": 4, "sophong": "104"},
+    {"id": 5, "sophong": "105"},
+    {"id": 6, "sophong": "106"},
+    {"id": 7, "sophong": "107"},
+    {"id": 8, "sophong": "108"},
+    {"id": 9, "sophong": "108"},
+    {"id": 10, "sophong": "108"},
+    {"id": 11, "sophong": "108"},
+    {"id": 12, "sophong": "108"},
+    {"id": 13, "sophong": "108"},
+    {"id": 14, "sophong": "108"},
+    {"id": 15, "sophong": "108"},
+    {"id": 16, "sophong": "108"}
+  ],
+  "dichvu": [
+    {"id":1, "dichvu": "Quản Lý", "donvi": "Chung"},
+    {"id":2, "dichvu": "Vệ Sinh", "donvi": "Chung"},
+    {"id":3, "dichvu": "An Ninh", "donvi": "Chung"},
+    {"id":4, "dichvu": "Bảo Dưỡng Tài Sản Chung", "donvi": "Chung"},
+    {"id":5, "dichvu": "Bảo Trì Chung Cư", "donvi": "Chung"},
+    {"id":6, "dichvu": "Gửi Xe", "donvi": "Chung"},
+    {"id":7, "dichvu": "Điện", "donvi": "Chung"},
+    {"id":8, "dichvu": "Nước", "donvi": "Chung"},
+    {"id":9, "dichvu": "Internet", "donvi": "Chung"}
+  ],
+  "hoadon": [
+    {"id":1, "khoanchi": "Điện"},
+    {"id":2, "khoanchi": "Nước"},
+    {"id":3, "khoanchi": "Gas"},
+    {"id":3, "khoanchi": "Quản Lý"},
+    {"id":4, "khoanchi": "Vệ Sinh Chung"},
+    {"id":5, "khoanchi": "An Ninh"},
+    {"id":6, "khoanchi": "Phí Bảo trì"},
+    {"id":7, "khoanchi": "Gửi Xe"},
+    {"id":7, "khoanchi": "Internet"}
+  ],
+  "seles": [
+    { "year": 2015, "amount1": 5000, "amount2":2000 },
+    { "year": 2016, "amount1": 500, "amount2":2000 },
+    { "year": 2017, "amount1": 3000, "amount2":2000 },
+    { "year": 2018, "amount1": 1000, "amount2":2000 }
+  ]
+}

@@ -1,0 +1,196 @@
+<style>
+    .card-pricing .card-pricing-plan-name {
+      padding-bottom: 0;
+    }
+  
+    .text-muted {
+      color: #1f2122!important;
+  }
+  </style>
+  
+  <div class="row justify-content-center">
+    <div class="col-xl-12">
+  
+        <!-- Pricing Title-->
+        <div class="text-center pb-2">
+            <p class="text-muted m-auto">
+              Nâng cấp tài khoản để phù hợp với quy mô phòng và sử dụng thêm nhiều tính năng mạnh mẽ khác.
+            </p>
+        </div>
+  
+        <div class="pricing-options text-center">
+          <label>
+            <input type="radio" name="pricingOption" value="monthly" [(ngModel)]="selectedOption">
+            Theo tháng
+          </label>
+          <label style="margin-left: 1rem;">
+            <input type="radio" name="pricingOption" value="yearly" [(ngModel)]="selectedOption">
+            Theo năm
+          </label>
+        </div>
+  
+        <!-- Plans -->
+        <div class="pricing-details" *ngIf="selectedOption === 'monthly'">
+          <div class="row my-3">
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                        <p class="card-pricing-plan-name fw-bold text-uppercase">BASIC</p>
+                        <h2 class="card-pricing-price">0đ</h2>
+                        <ul class="card-pricing-features">
+                            <li>5 GB Storege</li>
+                            <li>250 GB Bandwidth</li>
+                            <li>No Domain</li>
+                            <li>1 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                      <p class="card-pricing-plan-name fw-bold text-uppercase">VIP</p>
+                      <h2 class="card-pricing-price">199.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>10 GB Storage</li>
+                            <li>500 GB Bandwidth</li>
+                            <li>No Domain</li>
+                            <li>1 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing ribbon-box">
+                    <div class="ribbon-two ribbon-two-danger"><span>Phổ biến</span></div>
+                    <div class="card-body text-center">
+                      <p class="card-pricing-plan-name fw-bold text-uppercase">PRO</p>
+                      <h2 class="card-pricing-price">299.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>50 GB Storage</li>
+                            <li>900 GB Bandwidth</li>
+                            <li>2 Domain</li>
+                            <li>10 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-danger waves-effect mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                        <p class="card-pricing-plan-name fw-bold text-uppercase">PROMAX</p>
+                        <h2 class="card-pricing-price">399.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>100 GB Storege</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>10 Domain</li>
+                            <li>Unlimited User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-details" *ngIf="selectedOption === 'yearly'">
+          <div class="row my-3">
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                        <p class="card-pricing-plan-name fw-bold text-uppercase">BASIC</p>
+                        <h2 class="card-pricing-price">0đ</h2>
+                        <ul class="card-pricing-features">
+                            <li>5 GB Storege</li>
+                            <li>250 GB Bandwidth</li>
+                            <li>No Domain</li>
+                            <li>1 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                      <p class="card-pricing-plan-name fw-bold text-uppercase">VIP</p>
+                      <h2 class="card-pricing-price">699.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>10 GB Storage</li>
+                            <li>500 GB Bandwidth</li>
+                            <li>No Domain</li>
+                            <li>1 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing ribbon-box">
+                    <div class="ribbon-two ribbon-two-danger"><span>Phổ biến</span></div>
+                    <div class="card-body text-center">
+                      <p class="card-pricing-plan-name fw-bold text-uppercase">PRO</p>
+                      <h2 class="card-pricing-price">799.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>50 GB Storage</li>
+                            <li>900 GB Bandwidth</li>
+                            <li>2 Domain</li>
+                            <li>10 User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-danger waves-effect mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card card-pricing">
+                    <div class="card-body text-center">
+                        <p class="card-pricing-plan-name fw-bold text-uppercase">PROMAX</p>
+                        <h2 class="card-pricing-price">899.999</h2>
+                        <ul class="card-pricing-features">
+                            <li>100 GB Storege</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>10 Domain</li>
+                            <li>Unlimited User</li>
+                            <li>Email Support</li>
+                            <li>24x7 Support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <button class="btn btn-primary waves-effect waves-light mt-4">Nâng cấp ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>

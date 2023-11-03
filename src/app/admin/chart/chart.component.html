@@ -1,0 +1,267 @@
+<style>
+    .modal-header {
+      padding: 8px 14px;
+    }
+    .input {
+       width: 100%;
+       height: 25px;
+       margin: 4px 0;
+       padding: 2px 4px;
+       font-size: 12px;
+       font-weight: 400;
+     }
+     .elect-input {
+       display: flex; 
+       flex-wrap: wrap; 
+       padding: 4px 0px;
+       border-bottom: 1px solid;
+     }
+   .bal-border {
+     border: 1px solid;
+   }
+   .td:nth-of-type(odd) {
+      background-color: #e3dfdf;
+    }
+    td {
+      background-color: #fff;
+    }
+    .p-6-8 {
+      padding: 6px 8px;
+      font-size: 13px;
+      font-weight: bolder;
+    }
+    .p-0-10 {
+      padding: 0px 10px;
+      font-weight: 400;
+      color: #1b1b1b;
+      font-size: 14px;
+    }
+    .m-8-0 {
+        margin: 8px 0px;
+    }
+    .displays {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .bor {
+        border-bottom: 1px solid #3bafda;
+        margin-bottom: 4px;
+    }
+    .h5-bor {
+        padding: 8px 14px;
+        width: 90%;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .row-chart {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+    .row-chart-column {
+        width: 100%;
+        height: 290px;
+    }
+    .piechart {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="">
+    <div class="">
+        <div class="">
+            <div class="displays">
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class=" bor">
+                            <h5>Trạng Thái Căn Hộ</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2" style="width: 300px; margin: 0 auto;">
+                            <canvas id="piechart" style="width: 300px; height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class=" bor">
+                            <h5>Doanh Thu Hàng Tháng</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2" style="width: 300px; margin: 0 auto;">
+                            <canvas id="barchart" style="width: 300px; height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class="bor">
+                            <h5>Danh Sách Cư Dân Chưa Thanh Toán</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Chủ Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class=" bor">
+                            <h5>Danh Sách Phòng Còn Trống</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Chủ Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class=" bor">
+                            <h5>Danh Sách Cư Dân Chuyển Nhà</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Chủ Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class="bor">
+                            <h5>Danh Sách Cư Dân Chuyển Vào</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Chủ Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class="bor">
+                            <h5>Công Việc Chưa Hoàn Thành</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                        <th class="p-6-8" style="width: 2%;">Nội Dung</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 col-md-6">
+                    <div class="card">
+                        <div class=" bor">
+                            <h5>Danh Sách Hợp Đồng Sắp Hết Hạn</h5>
+                        </div>
+                        <div class="navbar-nav mt-xxl-2">
+                            <table class="table table-bordered table-inverse table-hover table-responsive" style="text-align: center;width: 100%;">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="p-6-8" style="width: 2%;">Tòa Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Phòng</th>
+                                        <th class="p-6-8" style="width: 2%;">Chủ Nhà</th>
+                                        <th class="p-6-8" style="width: 2%;">Thời Gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="p-0-10">1</td>
+                                        <td class="p-0-10"></td>
+                                        <td class="p-0-10">3</td>
+                                        <td class="p-0-10">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+    </div>
+</div>
+

@@ -1,0 +1,967 @@
+<style>
+.modal-header {
+  padding: 8px 14px;
+}
+.modal-footer {
+  padding: 2px 10px; 
+  margin-right: 10px;
+}
+.modal-body-display {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  height: 2.5rem;
+}
+
+.card-banner-item-number {
+  height: 1rem; 
+  padding: 0 2px; 
+  font-size: 10px; 
+  display: block;
+}
+.item-icon:hover {
+  background-color: #edeff1;
+  border-radius: 3px;
+  cursor: pointer;
+}
+</style>
+<div>
+  <div class="bannar-nav">
+    <div class="row">
+      <div class="row">
+        <div class="card">
+          <a class="row-house dismenu p-0" data-bs-toggle="collapse" href="#toanha{{id}}" >
+            <div class="row-house-h4 col-md-6" style="display: flex;">
+              <h5>Tòa Nhà A</h5>
+              <div class="" style="margin-top: 20px;">
+                <a class="card card-banner-item-number" style="color: #333;">
+                  <span class="mr-1">
+                    139</span><span>
+                    /</span><span>
+                    140</span>
+                </a>
+              </div>
+            </div>
+            <div class="row-house-h4 col-md-6 ">
+              <div class="disflex" style="justify-content: flex-end;">
+                <div class="collapse" id="buttonmenu" style="padding-top: 4px;">
+                  <a type="button" data-bs-toggle="modal" data-bs-target="#addfloom"
+                  class="item-icon p-4-10" title="Thêm Tầng" (click)="Add()">
+                  <i class="fa-solid fa-bed"></i></a>
+                  <a type="button" data-bs-toggle="modal" data-bs-target="#addhouse"
+                  class="item-icon p-4-10" title="Thêm Tòa Nhà" (click)="themtoa()">
+                  <i class="fa-solid fa-house-medical"></i></a>
+                  <a type="button" data-bs-toggle="modal" data-bs-target="#edithouse"
+                  class="item-icon p-4-10" style="" title="Sửa Tòa Nhà" (click)="suatoa()">
+                  <i class="fa-solid fa-house-laptop"></i></a>
+                  <a type="button" data-bs-toggle="modal" data-bs-target="#Deletehouse"
+                  class="item-icon p-4-10" style="" title="Xóa Tòa Nhà" (click)="DeleteHouse()">
+                  <i class="fa-solid fa-house-circle-xmark"></i></a>
+                </div>
+                <div class="item-icon" data-bs-toggle="collapse" href="#buttonmenu" style="padding: 7px 14px; margin-right: -8px;">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="navbar-nav collapse" id="toanha{{id}}">
+            <div style="">
+              <div class="card" style="margin-bottom: 10px">
+
+                <a class="row-house dismenu p-0" data-bs-toggle="collapse" href="#tangtoanha{{id}}" >
+                  <div class="row-house-h4 col-md-6" style="display: flex;">
+                    <h5>Tầng 1</h5>
+                    <div class="" style="margin-top: 20px;">
+                      <a class="card card-banner-item-number" style="color: #333;">
+                        <span class="mr-1">
+                          39</span><span>
+                          /</span><span>
+                          40</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row-house-h4 col-md-6 ">
+                    <div class="disflex" style="justify-content: flex-end;">
+                      <div class="collapse" id="buttonmenucolumn" style="padding-top: 4px;">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#addroom"
+                        class="item-icon p-4-10" title="Thêm Phòng" (click)="themtoa()">
+                        <i class="fa-solid fa-bed"></i></a>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#editfloom"
+                        class="item-icon p-4-10" title="Sửa Tầng" (click)="suatoa()">
+                        <i class="fa-regular fa-pen-to-square"></i></a>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#Deletefloom"
+                        class="item-icon p-4-10" title="Xóa Tầng" (click)="DeleteHouse()">
+                        <i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                      <div class="item-icon" data-bs-toggle="collapse" href="#buttonmenucolumn" style="padding: 7px 14px; margin-right: -8px;">
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="row collapse" id="tangtoanha{{id}}">
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon1" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon1" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon2" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon2" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon3" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon3" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 col-md-6">
+                    <div class="card card-body" style="margin: 4px 8px;">
+                      <div class="card-comment-p dismenu" style="margin-bottom: 2px;">
+                        <div class="row-house-h4" style="display: flex;">
+                          <a class="text-icon mr-1">P.001</a>
+                          <div class="" style="margin-top: 4px;">
+                            <a class="card card-banner-item-number" style="color: #333; margin: 0;">
+                              <span class="" style="font-size: 10px; font-weight: 500;">1/4</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="disflex" style="justify-content: flex-end;">
+                          <div class="collapse" id="buttonmenucolumnicon" style="margin-top: -2px;">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#manager"
+                            class="item-icon p-0-6" title="Xem thông tin chủ nhà" (click)="themtoa()">
+                            <i class="fa-solid fa-eye"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editmanager"
+                            class="item-icon p-0-6" title="Sửa thông tin cá nhân" (click)="themtoa()">
+                            <i class="fa-solid fa-user-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editroom"
+                            class="item-icon p-0-6" title="Sửa Phòng" (click)="suatoa()">
+                            <i class="fa-solid fa-pen"></i></a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#Deleteroom"
+                            class="item-icon p-0-6" title="Xóa Phòng" (click)="DeleteHouse()">
+                            <i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          <div class="item-icon p-0-6" data-bs-toggle="collapse" href="#buttonmenucolumnicon" style=" margin-right: -8px; margin-top: 2px; height: 18px;">
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div class="card text-icon" style="margin: 0;">
+                          <a style="font-size: 13px;"><i class="fa-regular fa-user mr-2"></i>nguyen thi thanh hang</a>
+                          <a href="#">+84 123 456 789</a>
+                        </div>
+                        <div class="card disflex" style="color: #333; height: 1.5rem; margin: 0;">
+                          <a class=""><i class="fa-brands fa-stack-overflow mr-2"></i><span>30m<span class="flash">2</span> </span></a>
+                          <div>|</div>
+                          <a class=""><i class="fa-solid fa-money-bill mr-2"></i><span>1tr2</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- hồ sơ cá nhân -->
+<div class="modal fade" id="manager" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Thông Tin Cá Nhân</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="disflex" style="justify-content: space-evenly;">
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="editmanager" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Sửa Thông Tin Cá Nhân</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="disflex" style="justify-content: space-evenly;">
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6" style="border: 1px solid #98a6ad;">
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Tên Khách 1</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">SĐT</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Zalo</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+          <dl class="modal-body-display col-md-12">
+            <dt class="col-md-4 pt-6">Địa Chỉ</dt>
+            <dd class="col-md-8 pt-6">
+              <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+              <ng-template #noInfo>Chưa có thông tin</ng-template>
+            </dd>
+          </dl>
+        </div>
+  
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- thêm & sửa tòa nhà -->
+<div class="modal fade" id="addhouse" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Thêm Tòa Nhà</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Tòa</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Địa Chỉ</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Quản Lý</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="edithouse" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Sửa Tòa Nhà</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Tòa</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Địa Chỉ</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Quản Lý</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Deletehouse" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa tòa nhà?</div>
+      <div class="modal-footer p-0">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- thêm tầng -->
+<div class="modal fade" id="addfloom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Thêm Tầng</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Tầng</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Địa Chỉ</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Thêm</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="editfloom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Sửa Tầng</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Tầng</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Địa Chỉ</dt>
+        <dd class="col-md-9">
+          <input style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Deletefloom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa Tầng?</div>
+      <div class="modal-footer p-0">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- thêm & sửa phòng -->
+<div class="modal fade" id="addroom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Thêm Phòng</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Phòng</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Chủ Nhà</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Người</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Hiện Trạng</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" list="icon-hientrang-add" id="icon-hientrang" name="icon-hientrang" style="width: 100%;" placeholder="..."/>
+          <datalist id="icon-hientrang-add">
+              <option value="Đang ở"></option>
+              <option value="Trống"></option>
+              <option value="Sắp Chuyển"></option>
+          </datalist>
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Diện Tích</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Tiền</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="editroom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Sửa Phòng</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Phòng</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Tên Chủ Nhà</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Người</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Hiện Trạng</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" list="icon-hientrang-add" id="icon-hientrang" name="icon-hientrang" style="width: 100%;" placeholder="..."/>
+          <datalist id="icon-hientrang-add">
+              <option value="Đang ở"></option>
+              <option value="Trống"></option>
+              <option value="Sắp Chuyển"></option>
+          </datalist>
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Diện Tích</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <dl class="modal-body-display col-md-12">
+        <dt class="col-md-3" style="margin-top: 6px;">Số Tiền</dt>
+        <dd class="col-md-9">
+          <input class="form-control" style="width: 100%;" type="text" placeholder=" ...">
+        </dd>
+      </dl>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="backroom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa dữ liệu phòng?</div>
+      <div class="modal-footer p-0">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Deleteroom" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa phòng?</div>
+      <div class="modal-footer p-0">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

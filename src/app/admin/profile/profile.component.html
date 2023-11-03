@@ -1,0 +1,246 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>Hồ sơ cá nhân</h3>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-success rounded-pill waves-effect float-end" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg" (click)="getDataForm()">
+                Cập nhật
+              </button>
+            </div>
+            <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Cập nhật hồ sơ</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <!-- [formGroup]="formPutProfile" (ngSubmit)="ProfileEdit()" -->
+                  <form>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6"> 
+                              <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">
+                                  Họ & Tên <span class="text-danger">(*)</span>
+                                </label>
+                                <div class="col-md-12">
+                                  <input type="text" class="form-control" placeholder="..." formControlName="fullname">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                              <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">
+                                  Số Điện Thoại <span class="text-danger">(*)</span>
+                                </label>
+                                <div class="col-md-12">
+                                  <input type="text" class="form-control" placeholder="..." formControlName="phone">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                              <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">Ngày Sinh</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="date" name="date">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                              <label class="col-md-12 col-form-label">Email</label>
+                              <div class="col-md-12">
+                                  <input type="email" name="example-email" class="form-control" placeholder="Email" formControlName="email">
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- end row  -->
+                      <div class="row">
+                        <div class="col-md-6">  
+                          <div class="mb-2 row">
+                            <label class="col-md-12 col-form-label">Giới Tính</label>
+                            <div class="col-md-12">
+                              <input  class="form-control" list="icon-giơitinh-add" id="icon-giơitinh" name="icon-giơitinh" style="width: 100%;" placeholder="..."/>
+                              <datalist id="icon-giơitinh-add">
+                                <option value="Nam"></option>
+                                <option value="Nữ"></option>
+                                <option value="Khác.."></option>
+                              </datalist>
+                            </div>
+                          </div>
+                      </div>
+                        <div class="col-md-6">  
+                            <div class="mb-2 row">
+                              <label class="col-md-12 col-form-label">CCCD</label>
+                              <div class="col-md-12">
+                                  <input class="form-control" type="number" name="number"  placeholder="123456...">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                              <label class="col-md-12 col-form-label">Ngày Cấp</label>
+                              <div class="col-md-12">
+                                  <input class="form-control" type="date" name="date">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                              <label class="col-md-12 col-form-label">Nơi Cấp</label>
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="...">
+                              </div>
+                            </div>
+                        </div>
+                      </div> 
+                      <!-- end row -->
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">Tỉnh/Thành Phố</label>
+                                <div class="col-md-12">
+                                  <input type="text" class="form-control" placeholder="..." formControlName="phone">
+
+                                    <!-- <ng-select [items]="arrProvince" bindLabel="name" bindValue="id" placeholder="Chon tinh/thanh pho" type="search" (change)="getCodeProvince($event)">
+                                    </ng-select> -->
+                                </div>                                                     
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">Quận/Huyện</label>
+                                <div class="col-md-12">
+                                  <input type="text" class="form-control" placeholder="..." formControlName="phone">
+
+                                    <!-- <ng-select [items]="arrDistricts" bindLabel="name" bindValue="id" placeholder="Chon quan/huyen" type="search" (change)="getCodeDistricts($event)">
+                                    </ng-select> -->
+                                </div>                                                     
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                                <label class="col-md-12 col-form-label">Phường/Xã</label>
+                                <div class="col-md-12">
+                                  <input type="text" class="form-control" placeholder="..." formControlName="phone">
+
+                                    <!-- <ng-select [items]="arrWards" bindLabel="name" bindValue="id" placeholder="Chon phuong/xa" type="search">
+                                    </ng-select> -->
+                                </div>                                                     
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-2 row">
+                              <label class="col-md-12 col-form-label">Địa Chỉ Cư Chú</label>
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="none" formControlName="address">
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- end row -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Hủy</button>
+                      <button type="submit" class="btn btn-info waves-effect waves-light" data-bs-dismiss="modal">Cập Nhật</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12">
+              <div class="p-2">
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9">
+                    <div>
+                      <span class="b-avatar badge-light-primary rounded-0">
+                        <svg viewBox="0 0 16 16" width="5em" height="5em" focusable="false" role="img"
+                          aria-label="person fill" aria-hidden="true" alt="avatar" fill="currentColor"
+                          class="bi-person-fill b-icon bi">
+                          <g>
+                            <path fill-rule="evenodd"
+                              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                          </g>
+                        </svg>
+                      </span>
+                      <!-- <img square="" src="https://resident.sgp1.digitaloceanspaces.com/host-resident-vn/media/1685000275358/avatar_1685000275353.jpeg" width="100" height="100" class="img-thumbnail img-fluid m1" style="width: 100px !important; height: 100px !important;"> -->
+                    </div>
+                  </div>
+                </div>
+                <dl class="row">
+                  <dt class="col-sm-3">Họ tên</dt>
+                  <dd class="col-sm-9">
+                    <ng-container *ngIf="fullname; else noInfo">{{ fullname }}</ng-container>
+                    <ng-template #noInfo>Chưa có thông tin</ng-template>
+                  </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3"> Số điện thoại </dt>
+                  <dd class="col-sm-9">
+                    <ng-container *ngIf="phone; else noInfo">
+                      {{ phone }}
+                      <button type="button" class="btn ml-50 btn-flat-warning btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="mr-50 feather feather-smartphone">
+                          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg><span class="align-middle">Xác minh ngay</span>
+                      </button>
+                    </ng-container>
+                    <ng-template #noInfo>Chưa có thông tin</ng-template>
+                  </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3 text-truncate"> Email </dt>
+                  <dd class="col-sm-9"> 
+                    <ng-container *ngIf="email; else noInfo">
+                      {{ email }}
+                      <button type="button" class="btn ml-50 btn-flat-warning btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="mr-50 feather feather-mail">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                          <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span class="align-middle">Xác minh ngay</span>
+                      </button>
+                    </ng-container>
+                    <ng-template #noInfo>Chưa có thông tin</ng-template>
+                  </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3"> Ngày sinh </dt>
+                  <dd class="col-sm-9"> Chưa có thông tin </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3"> Giới tính </dt>
+                  <dd class="col-sm-9"> Chưa có thông tin </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3"> CCCD </dt>
+                  <dd class="col-sm-9"> Chưa có thông tin </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3"> Địa chỉ </dt>
+                  <dd class="col-sm-9">
+                    <ng-container *ngIf="address; else noInfo">{{ address }}</ng-container>
+                    <ng-template #noInfo>Chưa có thông tin</ng-template>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>

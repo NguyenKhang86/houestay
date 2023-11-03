@@ -1,0 +1,17 @@
+.card-body {
+    padding: 8px;
+}
+.card {
+    padding: 10px;
+}
+.p-6-8 {
+    padding: 6px 8px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+.p-0-10 {
+    padding: 0px 10px;
+    font-weight: 400;
+    color: #1b1b1b;
+    font-size: 14px;
+}

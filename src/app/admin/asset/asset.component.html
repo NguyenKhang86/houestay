@@ -1,0 +1,206 @@
+
+<div class="navber-nav">
+    <div class="container">
+        <div class="card " style="padding: 0 15px;">
+          <div class="col-md-12">
+            <h3>Tài Sản Hiện Có</h3>
+          </div>
+            <div class="disflex">
+              <div style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="col-sm-6">
+                    <label for="icon-house">Tòa Nhà</label>
+                    <input list="icon-house-add" id="icon-house" name="icon-house"/>
+                    <datalist id="icon-house-add">
+                      <option value="Tòa A"></option>
+                      <option value="Tòa B"></option>
+                      <option value="Tòa C"></option>
+                      <option value="Tất Cả"></option>
+                    </datalist>
+                </div>
+                <div class="col-sm-6 disflex">
+                  <div >
+                    <label for="icon-time">Tháng/Năm</label>
+                    <input list="icon-time-add" id="icon-time" name="icon-time"/>
+                    <datalist id="icon-time-add">
+                      <option value="1/2023"></option>
+                      <option value="2/2023"></option>
+                      <option value="3/2023"></option>
+                    </datalist>
+                  </div>
+                    <div style="margin-top: 28px;">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#"
+                      class="btn btn-sm btn-primary waves-effect waves-light" title="Sửa thông tin">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <table style="text-align: center;" class="table table-bordered">
+              <thead class="table-primary">
+                <tr class="col-md-12">
+                  <th>Tòa Nhà</th>
+                  <th>Phòng</th>
+                  <th>Đồ Có Sẵn</th>
+                  <th>Đồ Mới Mua</th>
+                  <th>Đồ Cần Mua</th>
+                  <th>Ghi Chú</th>
+                  <th>Acction</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John</td>
+                  <td>001</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>
+                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin">
+                      <i class="mdi mdi-square-edit-outline"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin">
+                      <i class="mdi mdi-delete"></i>
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                    <td>John</td>
+                    <td>001</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin">
+                        <i class="mdi mdi-square-edit-outline"></i>
+                      </a>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>John</td>
+                    <td>001</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin">
+                        <i class="mdi mdi-square-edit-outline"></i>
+                      </a>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>John</td>
+                    <td>001</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin">
+                        <i class="mdi mdi-square-edit-outline"></i>
+                      </a>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>John</td>
+                    <td>001</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin">
+                        <i class="mdi mdi-square-edit-outline"></i>
+                      </a>
+                      <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- sửa tài sản -->
+<div class="modal fade" id="edit" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Sửa Thông Tin</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <dl class="row">
+          <dt class="col-sm-3">Đồ Có Sẵn</dt>
+          <dd class="col-sm-9">
+              <input  class="form-control" style="width: 100%;" placeholder="..."/>
+          </dd>
+      </dl>
+      <dl class="row">
+        <dt class="col-sm-3">Đồ Mới Mua</dt>
+        <dd class="col-sm-9">
+            <input  class="form-control" style="width: 100%;" placeholder="..."/>
+        </dd>
+      </dl>
+      <dl class="row">
+        <dt class="col-sm-3">Đồ Cần Mua</dt>
+        <dd class="col-sm-9">
+            <input  class="form-control" style="width: 100%;" placeholder="..."/>
+        </dd>
+      </dl>
+      <div class="row">
+        <div class="col">
+          <div class="mb-2 row">
+            <label class="col-md-12 col-form-label" for="example-textarea">Ghi chú</label>
+            <div class="col-md-12">
+                <textarea class="form-control" id="example-textarea" rows="5" placeholder="Thêm ghi chú..." formControlName="ghichu"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Lưu 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- xóa -->
+<div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa dữ liệu?</div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

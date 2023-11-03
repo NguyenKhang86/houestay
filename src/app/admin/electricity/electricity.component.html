@@ -1,0 +1,182 @@
+<style>
+  .modal-header {
+    padding: 8px 14px;
+  }
+  .input {
+     width: 100%;
+     height: 25px;
+     margin: 4px 0;
+     padding: 2px 4px;
+     font-size: 12px;
+     font-weight: 400;
+   }
+   .elect-input {
+     display: flex; 
+     flex-wrap: wrap; 
+     margin-left: -15px;
+     padding: 4px 0px;
+   }
+  .bal-border {
+    border: 1px solid;
+  }
+  .td:nth-of-type(odd) {
+    background-color: #e3dfdf;
+   }
+   td {
+    background-color: #fff;
+   }
+   .p-6-8 {
+    padding: 6px 8px;
+    font-size: 13px;
+    color: #000;
+  }
+  .p-0-10 {
+    padding: 0px 10px;
+    font-weight: 400;
+    color: #000;
+    font-size: 14px;
+  }
+  .card-comment-text {
+    border-bottom: 1px solid #3bafda;
+  }
+</style>
+<div class="navber-nav">
+  <div class="container">
+    <div class="card " style="padding: 0 15px;">
+      <div class="card-comment-text"><h5>Chỉ Số Điện Nước</h5></div>
+
+      <div class="elect-input">
+        <div class="col-xl-12 col-sm-6 col-md-3" style="">
+          <input class="input" list="icon-house-add" id="icon-house" name="icon-house" placeholder="Chọn tòa.."/>
+          <datalist id="icon-house-add">
+            <option value="Tòa A"></option>
+            <option value="Tòa B"></option>
+            <option value="Tòa C"></option>
+            <option value="Tất Cả"></option>
+          </datalist>
+        </div>
+        <div class="col-xl-12 col-sm-6 col-md-3" style="">
+          <input class="input" list="icon-tang-add" id="icon-tang" name="icon-tang" placeholder="Chọn tầng.."/>
+          <datalist id="icon-tang-add">
+            <option value="Tầng 1"></option>
+            <option value="Tầng 2"></option>
+            <option value="Tầng 3"></option>
+          </datalist>
+        </div>
+        <div class="col-xl-12 col-sm-6 col-md-3" style="">
+          <input class="input" list="icon-phong-add" id="icon-phong" name="icon-phong" placeholder="Chọn phòng.."/>
+          <datalist id="icon-phong-add">
+            <option value="Phòng 001"></option>
+            <option value="Phòng 002"></option>
+            <option value="Phòng 003"></option>
+          </datalist>
+        </div>
+        <div class=" col-xl-12 col-sm-6 col-md-3" style="margin-top: 4px;">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#"
+          class="btn btn-sm btn-primary waves-effect waves-light" style="padding: 2px 6px;" title="Sửa thông tin">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Tìm Kiếm
+          </button>
+        </div>
+      </div>
+
+      <div class="navbar-nav">
+        <table class="table table-bordered table-inverse table-hover table-responsive" cellspacing="0" width="100%" style="text-align: center;">
+          <thead class="thead-inverse">
+            <tr class="">
+              <th class="p-6-8">STT</th>
+              <th class="p-6-8 w-25">Tòa Nhà</th>
+              <th class="p-6-8">Phòng</th>
+              <th class="p-6-8 w-25">Số Điện</th>
+              <th class="p-6-8 w-25">Số Nước</th>
+              <th class="p-6-8">Thành Tiền</th>
+              <th class="p-6-8">Tác Vụ</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let i of phong; let index = index">
+            <tr>
+              <td class="p-0-10">{{index + 1}}</td>
+              <td class="p-0-10">Tòa Nhà A</td>
+              <td class="p-0-10">{{i.sophong}}</td>
+              <td class="p-0-10">12345</td>
+              <td class="p-0-10">12345</td>
+              <td class="p-0-10">1 000 000vnd</td>
+              <td class="p-0-10 custom-control-label">
+                <a data-bs-toggle="modal" data-bs-target="#edit" title="Cập nhật thông tin" class="p-1 font-16">
+                  <i class="mdi mdi-square-edit-outline"></i>
+                </a>
+                <a data-bs-toggle="modal" data-bs-target="#Delete" title="Xóa thông tin" class="p-1 font-16">
+                  <i class="mdi mdi-delete"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- sửa thông tin -->
+<div class="modal fade" id="edit" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-lg" style="margin-top: 140px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Chỉ Số Điện Nước</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="disflex">
+        <div class="col-md-6" style="border-right: 1px solid #e3dfdf;">
+          <dl class="modal-body-display">
+            <dt class="col-md-4" style="margin-top: 6px;">Số Điện Cũ</dt>
+            <dd class="col-md-8">
+              <input style="width: 100%;" type="text" placeholder=" ...">
+            </dd>
+          </dl>
+          <dl class="modal-body-display">
+            <dt class="col-md-4" style="margin-top: 6px;">Số Điện Mới</dt>
+            <dd class="col-md-8">
+              <input style="width: 100%;" type="text" placeholder=" ...">
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-6">
+          <dl class="modal-body-display">
+            <dt class="col-md-4" style="margin-top: 6px;">Số Nước Cũ</dt>
+            <dd class="col-md-8">
+              <input style="width: 100%;" type="text" placeholder=" ...">
+            </dd>
+          </dl>
+          <dl class="modal-body-display">
+            <dt class="col-md-4" style="margin-top: 6px;">Số Nước Mới</dt>
+            <dd class="col-md-8">
+              <input style="width: 100%;" type="text" placeholder=" ...">
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-secondary p-4-10" data-bs-dismiss="modal" (click)="Delete()">Hủy</button>
+        <button type="submit" class="btn btn-info p-4-10" data-bs-dismiss="modal" (click)="Delete()">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- xóa -->
+<div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header p-2">
+        <h4 class="modal-title" id="exampleModalToggleLabel">Cảnh báo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa Thông tin?</div>
+      <div class="modal-footer p-0">
+        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal" (click)="Delete()">
+          Xóa 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <form [formGroup]="formChangePass" (ngSubmit)="SavePass()" role="form" class="parsley-examples">
+          <div class="col-12">
+            <div class="p-2">
+              <div class="mb-2 row">
+                <label class="col-md-3 col-form-label" for="hori-pass1">
+                  Mật Khẩu Cũ <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-9">
+                  <div class="input-group input-group-merge">
+                    <input id="hori-pass1" type="password" class="form-control" placeholder="Enter your password" required
+                      formControlName="password">
+                    <div class="input-group-text" data-password="false">
+                      <span class="password-eye"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-2 row">
+                <label class="col-md-3 col-form-label" for="hori-pass2">
+                  Mật Khẩu Mới <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-9">
+                  <div class="input-group input-group-merge">
+                    <input id="hori-pass2" type="password" class="form-control" placeholder="Enter your password" required
+                      formControlName="newPassword">
+                    <div class="input-group-text" data-password="false">
+                      <span class="password-eye"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-2 row">
+                <label class="col-md-3 col-form-label" for="hori-pass3">
+                  Xác Nhận Mật Khâu Mới <span class="text-danger">(*)</span>
+                </label>
+                <div class="col-md-9">
+                  <div class="input-group input-group-merge">
+                    <input id="hori-pass3" data-parsley-equalto="#hori-pass2" type="password" class="form-control"
+                      placeholder="Enter your password" required>
+                    <div class="input-group-text" data-password="false">
+                      <span class="password-eye"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <button type="submit" class="btn btn-primary waves-effect waves-light me-1 float-end">Lưu</button>
+          <div class="alert alert-success" role="alert" style="position: absolute; bottom: 13rem; right: 30rem;"
+            *ngIf="isSuccess">
+            <i class="mdi mdi-check-all me-2"></i> Đổi mật khẩu thành công!
+          </div>
+          <div class="alert alert-warning" role="alert" style="position: absolute; bottom: 14rem; right: 25rem;"
+            *ngIf="isUnsuccess">
+            <i class="mdi mdi-alert-outline me-2"></i> Mật khẩu cũ không đúng hãy kiểm tra lại!
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
